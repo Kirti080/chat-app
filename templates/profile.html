@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<h2 id="profile-heading">Profile</h2>
+<form method="POST" id="profile-form">
+    <div class="mb-3">
+        <label>Display Name</label>
+        <input type="text" class="form-control" name="display_name" value="{{ current_user.display_name }}">
+    </div>
+    <div class="mb-3">
+        <label>Avatar URL</label>
+        <input type="url" class="form-control" name="avatar_url" value="{{ current_user.avatar_url or '' }}">
+    </div>
+    <button type="submit" class="btn btn-primary" id="profile-save-btn">Save Changes</button>
+</form>
+{% endblock %}

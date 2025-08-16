@@ -1,0 +1,160 @@
+/* General Dark Theme */
+body {
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar */
+#main-navbar {
+    background: linear-gradient(90deg, #1f1f1f, #292929);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+#main-navbar .navbar-brand {
+    color: #f0f0f0 !important;
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+#main-navbar .navbar-brand:hover {
+    color: #00c8ff !important;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 20px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.btn:hover {
+    transform: translateY(-2px);
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+.btn-success:hover {
+    background-color: #1e7e34;
+}
+.btn-outline-light {
+    color: #f0f0f0 !important;
+    border-color: #f0f0f0;
+}
+.btn-outline-light:hover {
+    background-color: #f0f0f0;
+    color: #121212 !important;
+}
+
+/* Form Controls */
+.form-control {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #f0f0f0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.form-control:focus {
+    background-color: #2c2c2c;
+    border-color: #00c8ff;
+    box-shadow: none;
+    color: #fff;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 10px;
+    color: #fff;
+}
+.alert-success { background-color: #28a745; }
+.alert-danger { background-color: #dc3545; }
+.alert-info { background-color: #17a2b8; }
+.alert-warning { background-color: #ffc107; color: #121212; }
+
+/* Group List */
+#group-list .list-group-item {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border: 1px solid #333;
+    transition: background-color 0.3s ease;
+}
+#group-list .list-group-item:hover {
+    background-color: #2a2a2a;
+}
+#group-list strong, 
+#group-list span {
+    color: #ffffff !important; /* Ensure visible text */
+}
+
+/* Chat Box */
+#chat-box {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    height: 400px;
+    overflow-y: auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.chat-message img {
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #00c8ff;
+}
+.chat-bubble.other {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+}
+.chat-bubble.self {
+    background-color: #007bff;
+    color: #fff;
+}
+.chat-meta {
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+/* Profile & Forms */
+#profile-form label,
+#login-form label,
+#register-form label {
+    color: #f0f0f0;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0,200,255,0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(0,200,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(0,200,255,0); }
+}
+
+/* Add a glowing animation to buttons when hovered */
+.btn-primary:hover, 
+.btn-success:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Scrollbar styling for chat */
+#chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+#chat-box::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+#chat-box::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+#chat-box::-webkit-scrollbar-thumb:hover {
+    background: #00c8ff;
+}

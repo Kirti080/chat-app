@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Groups{% endblock %}
+{% block content %}
+<h2 id="groups-heading">Groups</h2>
+
+<form method="POST" action="{{ url_for('groups') }}" class="mb-4" id="group-create-form">
+    <div class="mb-3">
+        <label>New Group Name</label>
+        <input type="text" class="form-control" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label>Description (optional)</label>
+        <input type="text" class="form-control" name="description">
+    </div>
+    <button type="submit" class="btn btn-success" id="group-create-btn">Create Group</button>
+</form>
+
+<ul class="list-group" id="group-list">
+    {% for group in groups %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>
+            <strong>{{ group.name }}</strong> 
+            {% if group.description %}- {{ group.description }}{% endif %}
+        </span>
+        <a href="{{ url_for('chat', group_id=group.id) }}" class="btn btn-primary btn-sm">Open</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
